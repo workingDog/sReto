@@ -10,6 +10,7 @@ Pod::Spec.new do |s|
   s.requires_arc          = true
   s.ios.deployment_target = '11.3'
   s.osx.deployment_target = '10.13.4'
+  s.swift_version = '4.1'
 
   s.source             = { :git => 'https://github.com/workingDog/sReto.git', :tag => s.version }
 
@@ -22,7 +23,7 @@ Pod::Spec.new do |s|
   s.subspec 'Bonjour' do |b|
   	b.source_files     = 'Source/sReto/Modules/Bonjour/**/*.swift'
   	b.dependency         'sReto/Core'
-  	b.dependency         'CocoaAsyncSocket', '7.6.2'
+  	b.dependency         'CocoaAsyncSocket', '7.6.3'
   end
   
   s.subspec 'WlanModule' do |wm|
