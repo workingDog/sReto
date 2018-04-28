@@ -8,10 +8,10 @@ Pod::Spec.new do |s|
   s.social_media_url   = 'https://twitter.com/ls1intum'
 
   s.requires_arc          = true
-  s.ios.deployment_target = '9.0'
-  s.osx.deployment_target = '10.9'
+  s.ios.deployment_target = '11.3'
+  s.osx.deployment_target = '10.13.4'
 
-  s.source             = { :git => 'https://github.com/ls1intum/sReto.git', :tag => s.version }
+  s.source             = { :git => 'https://github.com/workingDog/sReto.git', :tag => s.version }
 
   s.default_subspec    = 'WlanModule'
   
