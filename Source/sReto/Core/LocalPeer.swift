@@ -50,7 +50,7 @@ open class LocalPeer: NSObject, ConnectionManager, RouterHandler {
         return Set(knownPeers.values)
     }
     
-    static var deviceName: String {
+    public static var deviceName: String {
         #if os( iOS)
             return UIDevice.current.name
         #else
@@ -109,6 +109,30 @@ open class LocalPeer: NSObject, ConnectionManager, RouterHandler {
         self.name = name
         self.identifier = identifier
         self.router = DefaultRouter(localIdentifier: identifier, localName: name, dispatchQueue: dispatchQueue, modules: modules)
+        self.dispatchQueue = dispatchQueue
+        
+        super.init()
+        
+        self.router.delegate = self
+    }
+    
+    /**
+     * Constructs a new LocalPeer object. A random identifier will be used for the LocalPeer.
+     *
+     * @param name The name used for the peer
+     * @param localPeerIdentifier The identifier used for the peer
+     * @param modules An array of modules used for the underlying networking functionality. For example: @see WlanModule, @see RemoteP2PModule.
+     * @param dispatchQueue The dispatchQueue used to run all networking code with. The dispatchQueue can be used to specifiy the thread that should be used.
+     * @param browser Determine if the peer will be a browser only peer (true) or both browser and advertiser (false default)
+     */
+    public init(name: String, identifier: UUID, modules: [Module], dispatchQueue: DispatchQueue, browser: Bool = false) {
+        self.name = name
+        self.identifier = identifier
+        if browser {
+            self.router = BrowserRouter(localIdentifier: identifier, localName: name, dispatchQueue: dispatchQueue, modules: modules)
+        } else {
+            self.router = DefaultRouter(localIdentifier: identifier, localName: name, dispatchQueue: dispatchQueue, modules: modules)
+        }
         self.dispatchQueue = dispatchQueue
         
         super.init()

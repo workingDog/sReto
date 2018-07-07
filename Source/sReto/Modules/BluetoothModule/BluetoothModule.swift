@@ -34,7 +34,7 @@ open class BluetoothModule: Module {
     * @param dispatchQueue: The dispatch queue used with this module. Use the same one as you used with the LocalPeer.
     */
     public init(type: String, dispatchQueue: DispatchQueue) {
-        self.networkType = "_\(type)wlan._tcp."
+        self.networkType = "_\(type)._tcp."
         super.init(dispatchQueue: dispatchQueue)
         
         self.browser = BonjourBrowser(
@@ -51,4 +51,5 @@ open class BluetoothModule: Module {
             recommendedPacketSize: self.recommendedPacketSize
         )
     }
+     
 }

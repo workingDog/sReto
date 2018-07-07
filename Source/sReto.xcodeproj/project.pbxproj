@@ -194,6 +194,8 @@
 		5EAB33831C331632000A9BD5 /* WlanModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAB32F81C331632000A9BD5 /* WlanModule.swift */; };
 		5EAB33841C331632000A9BD5 /* WlanModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAB32F81C331632000A9BD5 /* WlanModule.swift */; };
 		A92D10F97693C60BF3C3CCB6 /* Pods_sRetoIOS_sRetoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D2EBD8CFB8C4D2553EE57D /* Pods_sRetoIOS_sRetoTests.framework */; };
+		C72EF50020D3477E00542575 /* BrowserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72EF4FF20D3477E00542575 /* BrowserRouter.swift */; };
+		C7A761EC20EF0553009ACA9B /* WlanTxtRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A761EB20EF0553009ACA9B /* WlanTxtRecord.swift */; };
 		CD39158919CA25E900459AA8 /* TestMulticastHandshakePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39158819CA25E900459AA8 /* TestMulticastHandshakePacket.swift */; };
 		CD3915BC19CA28A700459AA8 /* DummyNetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3915BB19CA28A700459AA8 /* DummyNetworkInterface.swift */; };
 		CD3915BE19CA293700459AA8 /* DummyBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3915BD19CA293700459AA8 /* DummyBrowser.swift */; };
@@ -286,6 +288,8 @@
 		887FA41D5BFB23E41539B808 /* Pods-sRetoIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sRetoIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sRetoIOS/Pods-sRetoIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		91D2EBD8CFB8C4D2553EE57D /* Pods_sRetoIOS_sRetoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sRetoIOS_sRetoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB92D04A7BA0B7E8FF94490C /* Pods-sRetoIOS-sRetoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sRetoIOS-sRetoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sRetoIOS-sRetoTests/Pods-sRetoIOS-sRetoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C72EF4FF20D3477E00542575 /* BrowserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserRouter.swift; sourceTree = "<group>"; };
+		C7A761EB20EF0553009ACA9B /* WlanTxtRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WlanTxtRecord.swift; sourceTree = "<group>"; };
 		CB8EC485F66003C6015F6F7E /* Pods-sRetoIOS-sRetoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sRetoIOS-sRetoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-sRetoIOS-sRetoTests/Pods-sRetoIOS-sRetoTests.release.xcconfig"; sourceTree = "<group>"; };
 		CD1814121A79B6850027BB09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = sReto/Info.plist; sourceTree = SOURCE_ROOT; };
 		CD39158819CA25E900459AA8 /* TestMulticastHandshakePacket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TestMulticastHandshakePacket.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -424,6 +428,7 @@
 				5EAB32C31C331632000A9BD5 /* Node.swift */,
 				5EAB32C41C331632000A9BD5 /* Router.swift */,
 				5EAB32C51C331632000A9BD5 /* RoutingPackets.swift */,
+				C72EF4FF20D3477E00542575 /* BrowserRouter.swift */,
 			);
 			path = Routing;
 			sourceTree = "<group>";
@@ -518,6 +523,7 @@
 				5EAB32F61C331632000A9BD5 /* WlanBonjourServiceAdvertiser.swift */,
 				5EAB32F71C331632000A9BD5 /* WlanBonjourServiceBrowser.swift */,
 				5EAB32F81C331632000A9BD5 /* WlanModule.swift */,
+				C7A761EB20EF0553009ACA9B /* WlanTxtRecord.swift */,
 			);
 			path = WlanModule;
 			sourceTree = "<group>";
@@ -898,6 +904,7 @@
 				5EAB33481C331632000A9BD5 /* Timer.swift in Sources */,
 				5EAB330C1C331632000A9BD5 /* PacketConnection.swift in Sources */,
 				5EAB336A1C331632000A9BD5 /* TcpIpAddress.swift in Sources */,
+				C72EF50020D3477E00542575 /* BrowserRouter.swift in Sources */,
 				5EAB33441C331632000A9BD5 /* RepeatedExecutor.swift in Sources */,
 				5EAB33721C331632000A9BD5 /* RemoteP2PPacket.swift in Sources */,
 				5EAB33081C331632000A9BD5 /* UnderlyingConnection.swift in Sources */,
@@ -908,6 +915,7 @@
 				5EAB33821C331632000A9BD5 /* WlanBonjourServiceBrowser.swift in Sources */,
 				5EAB332E1C331632000A9BD5 /* Node.swift in Sources */,
 				5EAB33321C331632000A9BD5 /* RoutingPackets.swift in Sources */,
+				C7A761EC20EF0553009ACA9B /* WlanTxtRecord.swift in Sources */,
 				5EAB335A1C331632000A9BD5 /* DNSSDRegistration.m in Sources */,
 				5EAB32FC1C331632000A9BD5 /* MinimumSteinerTreeApproximation.swift in Sources */,
 				5EAB33421C331632000A9BD5 /* SinglePacket.swift in Sources */,

@@ -52,7 +52,14 @@ class BonjourAdvertiser: NSObject, Advertiser, GCDAsyncSocketDelegate, BonjourSe
         self.dispatchQueue = dispatchQueue
         self.advertiser = advertiser
         self.recommendedPacketSize = recommendedPacketSize
-        
+        super.init()
+    }
+    
+    init(name: String, networkType: String, dispatchQueue: DispatchQueue, advertiser: BonjourServiceAdvertiser, recommendedPacketSize: Int) {
+        self.networkType = networkType
+        self.dispatchQueue = dispatchQueue
+        self.advertiser = advertiser
+        self.recommendedPacketSize = recommendedPacketSize
         super.init()
     }
     

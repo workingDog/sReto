@@ -34,7 +34,7 @@ open class WlanModule: Module {
     * @param dispatchQueue: The dispatch queue used with this module. Use the same one as you used with the LocalPeer.
     */
     public init(type: String, dispatchQueue: DispatchQueue) {
-        self.networkType = "_\(type)wlan._tcp."
+        self.networkType = "_\(type)._tcp."
         super.init(dispatchQueue: dispatchQueue)
         
         self.browser = BonjourBrowser(
@@ -49,4 +49,10 @@ open class WlanModule: Module {
             advertiser: WlanBonjourServiceAdvertiser(),
             recommendedPacketSize: self.recommendedPacketSize)
     }
+    
+    public convenience init(name: String, type: String, dispatchQueue: DispatchQueue) {
+        WlanTxtRecord.txtRecords = ["name": name.data(using: .utf8)! ]
+        self.init(type: type, dispatchQueue: dispatchQueue)
+    }
+      
 }

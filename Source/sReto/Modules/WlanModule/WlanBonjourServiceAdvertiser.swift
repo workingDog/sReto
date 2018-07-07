@@ -20,12 +20,13 @@
 
 import Foundation
 
-class WlanBonjourServiceAdvertiser: NSObject, BonjourServiceAdvertiser, NetServiceDelegate {
+open class WlanBonjourServiceAdvertiser: NSObject, BonjourServiceAdvertiser, NetServiceDelegate {
     var delegate: BonjourServiceAdvertiserDelegate?
-    var netService : NetService?
+    open var netService : NetService?
 
     func startAdvertising(_ name: String, type: String, port: UInt) {
         let netService = NetService(domain: "", type: type, name: name, port: Int32(port))
+  
         self.netService = netService
         
         netService.delegate = self
@@ -47,17 +48,20 @@ class WlanBonjourServiceAdvertiser: NSObject, BonjourServiceAdvertiser, NetServi
         self.delegate?.didStop()
     }
     
-    func netServiceDidPublish(_ sender: NetService) {
+    public func netServiceDidPublish(_ sender: NetService) {
+        if !sender.setTXTRecord(WlanTxtRecord.asData()) {
+            log(.medium, error: "----------> did not set txtRecord of: \(sender.name)")
+        }        
         log(.low, info: "published wlan bonjour address: \(sender.name)")
         self.delegate?.didPublish()
     }
     
-    func netService(_ sender: NetService, didNotPublish errorDict: [String : NSNumber]) {
+    public func netService(_ sender: NetService, didNotPublish errorDict: [String : NSNumber]) {
         log(.medium, error: "failed to publish on wlan: \(errorDict)")
         self.delegate?.didNotPublish()
     }
     
-    func netServiceDidStop(_ sender: NetService){
+    public func netServiceDidStop(_ sender: NetService){
         log(.medium, info: "stopped publishing on wlan")
         self.delegate?.didStop()
     }
