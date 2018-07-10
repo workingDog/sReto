@@ -20,7 +20,8 @@
 
 import Foundation
 
-var reliabilityManagerDelays = (regularDelay: 1.0, shortDelay: 0.4)
+//var reliabilityManagerDelays = (regularDelay: 1.0, shortDelay: 0.4)
+var reliabilityManagerDelays = (regularDelay: 5.0, shortDelay: 1.0)
 
 /**
 * The ReliablityManager's delegate protocol.

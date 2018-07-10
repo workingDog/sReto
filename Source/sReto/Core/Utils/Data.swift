@@ -67,7 +67,8 @@ open class DataReader {
     * @return An NSData object with the specified length.
     */
     func getData(_ length : Int) -> Data {
-        self.assertRemaining(length)
+        if !checkRemaining(length) { return Data() }
+  //      self.assertRemaining(length)
         //TODO: is this correct?
         let range = Range<Data.Index>(uncheckedBounds:(lower:position, upper: position + length))
         let data = self.data.subdata(in: range)
@@ -123,7 +124,8 @@ open class DataReader {
     }
     /** Reads data and advances the position. */
     fileprivate func getAndAdvance(_ value : UnsafeMutableRawPointer, length : Int) {
-        self.assertRemaining(length)
+        if !checkRemaining(length) { return }
+ //       self.assertRemaining(length)
         (self.data as NSData).getBytes(value, range: NSMakeRange(self.position, length))
         position += length
     }
